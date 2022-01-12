@@ -1,0 +1,6 @@
+<h2 *ngIf="!datastore.hasCompletedEvaluations()">There are no evaluations<br>marked as done yet.</h2>
+<h3 *ngIf="datastore.hasCompletedEvaluations()">
+    <ul>
+        <li *ngFor="let completed of datastore.getDone()">{{ completed }}</li>
+    </ul>
+</h3>

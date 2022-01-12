@@ -1,0 +1,22 @@
+:host {
+    form {
+        padding: 1.1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            background-color: #c2185b;
+            padding: 2%;
+            text-align: center;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .half-width {
+            width: 50%;
+        }
+    }
+}

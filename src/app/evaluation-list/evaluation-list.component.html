@@ -1,0 +1,207 @@
+<h3>Tap the check icon<br>to mark the evaluation as done</h3>
+<mat-accordion>
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                INFO2320
+            </mat-panel-title>
+            <mat-panel-description>
+                System Analysis and Design
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p *ngIf="!datastore.hasAnyEvaluations('INFO2320')">There are currently no evaluations listed for this course.</p>
+        <table mat-table [dataSource]="dataSource" *ngIf="datastore.hasAnyEvaluations('INFO2320')">
+            <ng-container matColumnDef="category">
+                <th mat-header-cell *matHeaderCellDef>Category</th>
+                <td mat-cell *matCellDef="let evaluation"> {{ evaluation[1] }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="due-date">
+                <th mat-header-cell *matHeaderCellDef>Due Date</th>
+                <td mat-cell *matCellDef="let evaluation"> {{ evaluation[2] }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="url">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation"> <a href="{{ evaluation[3] }}"><mat-icon color="primary">link</mat-icon></a></td>
+            </ng-container>
+    
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation" (click)="openDialog(evaluation[4])"><mat-icon color="primary">info</mat-icon></td>
+            </ng-container>
+
+            <ng-container matColumnDef="done">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation; index as i" (click)="onItemClick(i)"><mat-icon color="success">done_outline</mat-icon></td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.hideTableRow]="row[0] !== 'INFO2320'"></tr>
+        </table><br>
+    </mat-expansion-panel><br>
+
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                PROG2220
+            </mat-panel-title>
+            <mat-panel-description>
+                Database: SQL
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p *ngIf="!datastore.hasAnyEvaluations('PROG2220')">There are currently no evaluations listed for this course.</p>
+        <table mat-table [dataSource]="dataSource" *ngIf="datastore.hasAnyEvaluations('PROG2220')">
+            <ng-container matColumnDef="category">
+                <th mat-header-cell *matHeaderCellDef>Category </th>
+                <td mat-cell *matCellDef="let evaluation"> {{ evaluation[1] }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="due-date">
+                <th mat-header-cell *matHeaderCellDef>Due Date </th>
+                <td mat-cell *matCellDef="let evaluation"> {{ evaluation[2] }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="url">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation"> <a href="{{ evaluation[3] }}"><mat-icon color="primary">link</mat-icon></a></td>
+            </ng-container>
+    
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation" (click)="openDialog(evaluation[4])"><mat-icon color="primary">info</mat-icon></td>
+            </ng-container>
+
+            <ng-container matColumnDef="done">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation; index as i" (click)="onItemClick(i)"><mat-icon color="success">done_outline</mat-icon></td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.hideTableRow]="row[0] !== 'PROG2220'"></tr>
+        </table><br>
+    </mat-expansion-panel><br>
+
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                PROG2230
+            </mat-panel-title>
+            <mat-panel-description>
+                Microsoft Web Technologies
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p *ngIf="!datastore.hasAnyEvaluations('PROG2230')">There are currently no evaluations listed for this course.</p>
+        <table mat-table [dataSource]="dataSource" *ngIf="datastore.hasAnyEvaluations('PROG2230')">
+            <ng-container matColumnDef="category">
+                <th mat-header-cell *matHeaderCellDef>Category </th>
+                <td mat-cell *matCellDef="let evaluation"> {{ evaluation[1] }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="due-date">
+                <th mat-header-cell *matHeaderCellDef>Due Date </th>
+                <td mat-cell *matCellDef="let evaluation"> {{ evaluation[2] }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="url">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation"> <a href="{{ evaluation[3] }}"><mat-icon color="primary">link</mat-icon></a></td>
+            </ng-container>
+    
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation" (click)="openDialog(evaluation[4])"><mat-icon color="primary">info</mat-icon></td>
+            </ng-container>
+
+            <ng-container matColumnDef="done">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation; index as i" (click)="onItemClick(i)"><mat-icon color="success">done_outline</mat-icon></td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.hideTableRow]="row[0] !== 'PROG2230'"></tr>
+        </table><br>
+    </mat-expansion-panel><br>
+
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                PROG2370
+            </mat-panel-title>
+            <mat-panel-description>
+                Game and Data Structures
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p *ngIf="!datastore.hasAnyEvaluations('PROG2370')">There are currently no evaluations listed for this course.</p>
+        <table mat-table [dataSource]="dataSource" *ngIf="datastore.hasAnyEvaluations('PROG2370')">
+            <ng-container matColumnDef="category">
+                <th mat-header-cell *matHeaderCellDef>Category </th>
+                <td mat-cell *matCellDef="let evaluation"> {{ evaluation[1] }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="due-date">
+                <th mat-header-cell *matHeaderCellDef>Due Date </th>
+                <td mat-cell *matCellDef="let evaluation"> {{ evaluation[2] }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="url">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation"> <a href="{{ evaluation[3] }}"><mat-icon color="primary">link</mat-icon></a></td>
+            </ng-container>
+    
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation" (click)="openDialog(evaluation[4])"><mat-icon color="primary">info</mat-icon></td>
+            </ng-container>
+
+            <ng-container matColumnDef="done">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation; index as i" (click)="onItemClick(i)"><mat-icon color="success">done_outline</mat-icon></td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.hideTableRow]="row[0] !== 'PROG2370'"></tr>
+        </table><br>
+    </mat-expansion-panel><br>
+
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                PROG2430
+            </mat-panel-title>
+            <mat-panel-description>
+                Mobile Applications
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p *ngIf="!datastore.hasAnyEvaluations('PROG2430')">There are currently no evaluations listed for this course.</p>
+        <table mat-table [dataSource]="dataSource" *ngIf="datastore.hasAnyEvaluations('PROG2430')">
+            <ng-container matColumnDef="category">
+                <th mat-header-cell *matHeaderCellDef>Category </th>
+                <td mat-cell *matCellDef="let evaluation"> {{ evaluation[1] }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="due-date">
+                <th mat-header-cell *matHeaderCellDef>Due Date </th>
+                <td mat-cell *matCellDef="let evaluation"> {{ evaluation[2] }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="url">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation"> <a href="{{ evaluation[3] }}"><mat-icon color="primary">link</mat-icon></a></td>
+            </ng-container>
+    
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation" (click)="openDialog(evaluation[4])"><mat-icon color="primary">info</mat-icon></td>
+            </ng-container>
+
+            <ng-container matColumnDef="done">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let evaluation; index as i" (click)="onItemClick(i)"><mat-icon color="success">done_outline</mat-icon></td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; index as i; columns: displayedColumns;" [class.hideTableRow]="row[0] !== 'PROG2430'"></tr>
+        </table><br>
+    </mat-expansion-panel><br>
+</mat-accordion>
